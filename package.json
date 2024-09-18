@@ -1,0 +1,48 @@
+{
+  "name": "@fancade-club/club",
+  "author": "Fancade Club",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "astro": "^5.0.0-beta.1"
+  },
+  "release": {
+    "extends": "@bricked/semantic-release-config"
+  },
+  "lint-staged": {
+    "!(*.ts|package.json)": "npx prettier --ignore-unknown --write",
+    "(*.(c|m)?(t|j)s|*.astro)": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "devDependencies": {
+    "@bricked/semantic-release-config": "^1.2.1",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.10.0",
+    "@types/eslint__js": "^8.42.3",
+    "commitlint": "^19.5.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "sort-package-json": "^2.10.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0"
+  }
+}
