@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
-    "astro": "^5.0.0-beta.1"
+    "@fontsource-variable/baloo-2": "^5.1.0",
+    "astro": "^5.0.0-beta.1",
+    "sass-embedded": "^1.79.1"
   },
   "release": {
     "extends": "@bricked/semantic-release-config"

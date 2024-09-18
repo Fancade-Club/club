@@ -1,4 +1,8 @@
 ---
+import "@styles/global.scss";
+import "@styles/fancade-palette.scss";
+import "@fontsource-variable/baloo-2";
+
 interface Props {
   title: string;
   description: string;
@@ -18,6 +22,22 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
+<style>
+  body {
+    color: var(--white);
+    background: linear-gradient(-40deg, var(--blue), var(--light-blue));
+    min-height: 100vh;
+    font-family: "Baloo 2 Variable", system-ui;
+    font-weight: 800;
+  }
+  main {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+</style>
