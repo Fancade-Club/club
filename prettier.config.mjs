@@ -1,8 +1,3 @@
-// ts-check
-
-// @type {import("prettier").Config}
-const config = {
+export default {
   plugins: ["prettier-plugin-astro"],
 };
-
-export default config;
