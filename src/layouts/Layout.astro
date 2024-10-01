@@ -9,25 +9,24 @@ interface Props {
   description?: string;
 }
 
-const { title, description } = Astro.props;
+let { title, description } = Astro.props;
 
-const fullDescription =
-  description ||
+description ??=
   "The Fancade Club is a worldwide community of Fancade enthusiasts. Join and become a member today!";
 
-let fullTitle = "Fancade Club";
-if (title) fullTitle += " - " + title;
+if (title) title += " - ";
+title += "Fancade Club";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={fullDescription} />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={Icon.src} />
     <meta name="generator" content={Astro.generator} />
-    <title>{fullTitle}</title>
+    <title>{title}</title>
   </head>
   <body>
     <Header />
