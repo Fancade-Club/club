@@ -5,22 +5,29 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props;
+
+const fullDescription =
+  description ||
+  "The Fancade Club is a worldwide community of Fancade enthusiasts. Join and become a member today!";
+
+let fullTitle = "Fancade Club";
+if (title) fullTitle += " - " + title;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={fullDescription} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={Icon.src} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
   </head>
   <body>
     <Header />
