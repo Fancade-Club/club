@@ -1,7 +1,8 @@
 ---
-import "@styles/global.css";
-import "@styles/fancade-palette.css";
+import Icon from "@assets/icon.png";
 import "@fontsource-variable/baloo-2";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 interface Props {
   title: string;
@@ -17,36 +18,30 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <link rel="icon" type="image/svg+xml" href={Icon.src} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
-  <footer>
-    This website is not affiliated with, endorsed, or sponsored by <strong
-      >Fancade</strong
-    > or its creators. All trademarks, copyrights, and intellectual property rights
-    associated with <strong>Fancade</strong> belong to their respective owners. This
-    website is a third-party service provided by <a
-      href="https://bricked.dev/about">Bricked</a
-    > and is intended for informational purposes only.
-  </footer>
 </html>
 
 <style>
   body {
-    color: var(--white);
-    background: linear-gradient(-40deg, var(--blue), var(--light-blue));
     min-height: 100vh;
+    color: #333333;
+    font-size: 14pt;
     font-family: "Baloo 2 Variable", system-ui;
-    font-weight: 800;
+    font-weight: 500;
   }
   main {
-    max-width: 500px;
+    min-height: 100vh;
+    max-width: 800px;
     margin: 0 auto;
   }
 </style>

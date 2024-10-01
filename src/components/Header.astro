@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Icon from "@assets/icon.png";
+---
+
+<header>
+  <div class="content">
+    <a href="/">
+      <h1>
+        <Image
+          src={Icon}
+          width={37}
+          height={37}
+          alt="Icon of the Fancade Club"
+        />
+        <span>Fancade Club</span>
+      </h1>
+    </a>
+    <a href="/contact">Contact</a>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0em;
+    background-color: white;
+    box-shadow: 0 8px 6px -8px black;
+  }
+  .content {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 0em auto;
+    padding: 0em 1em;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+  content:last-child {
+    margin-left: auto;
+  }
+  h1 {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  a {
+    color: unset;
+    text-decoration-thickness: 0px;
+    text-decoration-color: #33333300;
+    transition: all 0.2s;
+  }
+  a:hover {
+    text-decoration-thickness: 3px;
+    text-decoration-color: #333333ff;
+  }
+</style>
