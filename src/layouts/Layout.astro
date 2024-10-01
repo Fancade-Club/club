@@ -9,9 +9,9 @@ interface Props {
   description?: string;
 }
 
-let { title, description } = Astro.props;
+let { title = "", description = "" } = Astro.props;
 
-description ??=
+description ||=
   "The Fancade Club is a worldwide community of Fancade enthusiasts. Join and become a member today!";
 
 if (title) title += " - ";
