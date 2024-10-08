@@ -1,0 +1,18 @@
+---
+import { actions } from "astro:actions";
+import Layout from "@layouts/Layout.astro";
+import Form from "@comps/forms/Form.astro";
+import Input from "@comps/forms/Input.astro";
+import Button from "@comps/forms/Button.astro";
+
+if (Astro.locals.user) return Astro.redirect("/account");
+---
+
+<Layout title="Log In">
+  <Form method="POST" action={"/account" + actions.login}>
+    <Input required name="slug" label="Handle" />
+    <Input required type="password" name="password" label="Password" />
+    <Button>Log in</Button>
+  </Form>
+  <p>Not a member yet? <a href="/account/signup">Sign up</a>!</p>
+</Layout>

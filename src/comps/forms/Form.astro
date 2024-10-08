@@ -1,0 +1,15 @@
+---
+type Props = astroHTML.JSX.FormHTMLAttributes;
+---
+
+<form {...Astro.props}>
+  <slot />
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+</style>

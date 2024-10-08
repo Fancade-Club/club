@@ -1,0 +1,19 @@
+---
+type Props = astroHTML.JSX.ButtonHTMLAttributes;
+---
+
+<button {...Astro.props}><slot /></button>
+
+<style>
+  button {
+    all: unset;
+    padding: 0.5em;
+    background: #eee;
+    border-radius: 0.5em;
+    text-align: center;
+  }
+  button:hover {
+    cursor: pointer;
+    background: #ddd;
+  }
+</style>

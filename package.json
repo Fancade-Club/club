@@ -14,8 +14,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@astrojs/netlify": "^6.0.0-beta.0",
     "@fontsource-variable/baloo-2": "^5.1.0",
-    "astro": "^5.0.0-beta.1"
+    "@lucia-auth/adapter-drizzle": "^1.1.0",
+    "@neondatabase/serverless": "^0.10.1",
+    "@node-rs/argon2": "^2.0.0",
+    "@sindresorhus/slugify": "^2.2.1",
+    "@types/zxcvbn": "^4.4.5",
+    "astro": "^5.0.0-beta.4",
+    "drizzle-orm": "^0.34.0",
+    "lucia": "^3.2.1",
+    "zxcvbn": "^4.4.2"
   },
   "lint-staged": {
     "!(*.ts|package.json)": "npx prettier --ignore-unknown --write",
@@ -32,6 +41,8 @@
     "@eslint/js": "^9.10.0",
     "@types/eslint__js": "^8.42.3",
     "commitlint": "^19.5.0",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.25.0",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.6",
