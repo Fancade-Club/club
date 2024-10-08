@@ -4,7 +4,7 @@ The Fancade Club is a worldwide community of Fancade enthusiasts. Join and becom
 
 ## Building
 
-You'll need `git`, `node 16+` and `npm` to get started.
+You'll need `git`, `node 18+` and `npm` to get started.
 
 ```sh
 # Cloning the repository
