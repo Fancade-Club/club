@@ -5,13 +5,7 @@ interface Props extends astroHTML.JSX.InputHTMLAttributes {
   id?: string;
 }
 
-const {
-  name,
-  id = `${name}-input`,
-  label,
-  placeholder = "Click to type...",
-  type,
-} = Astro.props;
+const { name, id = `${name}-input`, label, placeholder, type } = Astro.props;
 ---
 
 <div class="input-field">

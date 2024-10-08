@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Form from "@comps/forms/Form.astro";
+import Input from "@comps/forms/Input.astro";
+import Button from "@comps/forms/Button.astro";
+import { actions } from "astro:actions";
+
+const { user } = Astro.locals;
+if (!user) return Astro.redirect("/account/signup");
+---
+
+<Layout title="Settings">
+  <Form method="POST" action={"/account/settings" + actions.settings}>
+    <Input name="name" label="Name" value={user.name} />
+    <Input name="slug" label="Handle" value={user.slug} />
+    <Input type="password" name="password" label="Password" />
+    <Button>Update</Button>
+  </Form>
+  <h2>Account Management</h2>
+  <Form>
+    <Button formmethod="POST" formaction={"/account/signup" + actions.logout}
+      >Log out</Button
+    >
+  </Form>
+</Layout>
+
+<script>
+  import { slug } from "@lib/schema";
+
+  const nameInput = document.getElementById("name-input") as HTMLInputElement;
+  const slugInput = document.getElementById("slug-input") as HTMLInputElement;
+
+  function setSlug(this: HTMLInputElement) {
+    const { success, data } = slug().safeParse(this.value);
+    if (success) slugInput.value = data;
+  }
+
+  nameInput.addEventListener("input", setSlug);
+  slugInput.addEventListener("input", setSlug);
+</script>
