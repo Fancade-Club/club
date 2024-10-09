@@ -13,15 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - run: npm ci
-        env:
-          HUSKY: 0
-      - run: npm run build --if-present
-      - run: npm run format --if-present
+      - uses: actions/checkout@v4
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
