@@ -7,23 +7,29 @@
     "astro": "astro",
     "build": "astro check && astro build",
     "dev": "astro dev",
+    "format": "$npm_execpath run format:package; $npm_execpath run format:prettier && $npm_execpath run format:eslint",
     "format:eslint": "eslint --fix src/",
-    "format:package": "npx format-package -w",
+    "format:package": "format-package -w ./**/package.json",
     "format:prettier": "prettier --write .",
-    "format": "$npm_execpath run format:prettier && $npm_execpath run format:eslint",
     "prepare": "husky",
     "preview": "astro preview",
     "start": "astro dev"
   },
   "lint-staged": {
-    "!(*.(c|m)?(t|j)s|*.astro)": "npx prettier --ignore-unknown --write",
+    "!(*.(c|m)?(t|j)s|*.astro|package.json)": "npx prettier --ignore-unknown --write",
+    "package.json": "format-package -w",
     "(*.(c|m)?(t|j)s|*.astro)": [
-      "npx prettier --write",
-      "npx eslint --fix"
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "commitlint": {
     "extends": "@commitlint/config-conventional"
+  },
+  "overrides": {
+    "format-package": {
+      "prettier": ">=3.3.3"
+    }
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -41,6 +47,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",
+    "format-package": "^7.0.0",
     "@eslint/js": "^9.10.0",
     "@types/eslint__js": "^8.42.3",
     "commitlint": "^19.5.0",
