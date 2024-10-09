@@ -16,7 +16,7 @@
     "start": "astro dev"
   },
   "lint-staged": {
-    "!(*.ts|package.json)": "npx prettier --ignore-unknown --write",
+    "!(*.(c|m)?(t|j)s|*.astro)": "npx prettier --ignore-unknown --write",
     "(*.(c|m)?(t|j)s|*.astro)": [
       "npx prettier --write",
       "npx eslint --fix"
