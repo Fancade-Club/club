@@ -2,7 +2,6 @@
   "name": "@fancade-club/club",
   "author": "Fancade Club",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "scripts": {
     "astro": "astro",
