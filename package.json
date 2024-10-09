@@ -1,19 +1,29 @@
 {
   "name": "@fancade-club/club",
-  "author": "Fancade Club",
   "license": "MIT",
+  "author": "Fancade Club",
   "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "astro check && astro build",
     "dev": "astro dev",
+    "format:eslint": "eslint --fix src/",
     "format:package": "npx format-package -w",
     "format:prettier": "prettier --write .",
-    "format:eslint": "eslint --fix src/",
     "format": "$npm_execpath run format:prettier && $npm_execpath run format:eslint",
+    "prepare": "husky",
     "preview": "astro preview",
-    "start": "astro dev",
-    "prepare": "husky"
+    "start": "astro dev"
+  },
+  "lint-staged": {
+    "!(*.ts|package.json)": "npx prettier --ignore-unknown --write",
+    "(*.(c|m)?(t|j)s|*.astro)": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -28,16 +38,6 @@
     "drizzle-orm": "^0.34.0",
     "lucia": "^3.2.1",
     "zxcvbn": "^4.4.2"
-  },
-  "lint-staged": {
-    "!(*.ts|package.json)": "npx prettier --ignore-unknown --write",
-    "(*.(c|m)?(t|j)s|*.astro)": [
-      "npx prettier --write",
-      "npx eslint --fix"
-    ]
-  },
-  "commitlint": {
-    "extends": "@commitlint/config-conventional"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",

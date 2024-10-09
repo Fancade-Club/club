@@ -13,7 +13,7 @@ export const signup = defineAction({
     slug: slug(),
     password: z.string(),
   }),
-  handler: async ({name, slug, password}, {cookies}) => {
+  handler: async ({ name, slug, password }, { cookies }) => {
     const id = generateIdFromEntropySize(10);
     await db.insert(users).values({
       id,

@@ -13,21 +13,24 @@ export const settings = defineAction({
     slug: emptyString().nullable().or(slug()),
     password: emptyString().nullable().or(z.string()),
   }),
-  handler: async ({name, slug, password}, {locals: {user}}) => {
+  handler: async ({ name, slug, password }, { locals: { user } }) => {
     if (!user)
       throw new ActionError({
         code: "UNAUTHORIZED",
-        message: "You need to be logged in to edit your preferences."
-      })
+        message: "You need to be logged in to edit your preferences.",
+      });
 
     if (name == user.name) name = null;
     if (slug == user.slug) slug = null;
     if (!(name || slug || password)) return;
 
-    await db.update(users).set({
-      name: name ?? undefined,
-      slug: slug ?? undefined,
-      password: password ? await hash(password, hashOptions) : undefined,
-    }).where(eq(users.id, user.id))
+    await db
+      .update(users)
+      .set({
+        name: name ?? undefined,
+        slug: slug ?? undefined,
+        password: password ? await hash(password, hashOptions) : undefined,
+      })
+      .where(eq(users.id, user.id));
   },
 });

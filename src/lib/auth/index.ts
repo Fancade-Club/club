@@ -10,9 +10,10 @@ export const lucia = new Lucia(adapter, {
       secure: import.meta.env.PROD,
     },
   },
-  getUserAttributes: ({name, slug}) => ({
-    name, slug
-  })
+  getUserAttributes: ({ name, slug }) => ({
+    name,
+    slug,
+  }),
 });
 
 export const hashOptions = {
@@ -28,7 +29,6 @@ declare module "lucia" {
     DatabaseUserAttributes: {
       name: string;
       slug: string;
-    }
+    };
   }
 }
-
