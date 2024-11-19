@@ -24,4 +24,4 @@ The Dittocade uses [Netlify](https://netlify.com) and [Neon](https://neon.tech) 
 
 ## Disclaimer
 
-We are not affiliated with Fancade. See [our disclaimer](https://ditto.cade.party/disclaimer). For inquiries please [contact us](https://ditto.cade.party/contact).
+We are not affiliated with Fancade. See [our disclaimer](https://cade.party/disclaimer). For inquiries please [contact us](https://cade.party/contact).

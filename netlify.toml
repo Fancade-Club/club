@@ -1,25 +1,25 @@
 [[redirects]]
   from = "https://fancade-club.netlify.app/*"
-  to = "https://ditto.cade.party/:splat"
+  to = "https://cade.party/:splat"
   status = 301
   force = true
 [[redirects]]
   from = "https://cade.club/*"
-  to = "https://ditto.cade.party/:splat"
+  to = "https://cade.party/:splat"
   status = 301
   force = true
 [[redirects]]
   from = "https://www.cade.club/*"
-  to = "https://ditto.cade.party/:splat"
+  to = "https://cade.party/:splat"
   status = 301
   force = true
 [[redirects]]
   from = "https://fancade.club/*"
-  to = "https://ditto.cade.party/:splat"
+  to = "https://cade.party/:splat"
   status = 301
   force = true
 [[redirects]]
   from = "https://www.fancade.club/*"
-  to = "https://ditto.cade.party/:splat"
+  to = "https://cade.party/:splat"
   status = 301
   force = true
