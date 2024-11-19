@@ -16,9 +16,9 @@ const { title = "", description = "" } = Astro.props;
 
 const metaDescription =
   description ||
-  "The Fancade Club is a worldwide community of Fancade enthusiasts. Join and become a member today!";
+  "The Dittocade is a worldwide community of Fancade enthusiasts. Join and become a member today!";
 
-const metaTitle = (title && title + " - ") + "Fancade Club";
+const metaTitle = (title && title + " - ") + "Dittocade";
 ---
 
 <!doctype html>
@@ -32,8 +32,8 @@ const metaTitle = (title && title + " - ") + "Fancade Club";
     <title>{metaTitle}</title>
   </head>
   <body>
-    <Header title="Club" image={Icon}
-      ><NavLink href="https://account.fancade.club">Account</NavLink></Header
+    <Header title="Dittocade" image={Icon}
+      ><NavLink href="https://account.cade.party">Account</NavLink></Header
     >
     <main>
       {
